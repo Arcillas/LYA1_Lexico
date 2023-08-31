@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "CbL8TFEw8RQt6To+NoN6rtKL+KnDSikUPyZN2HeFbGb5pAObOq7K/vb4bExM8sw1dO17KgmSkCA1WaetSkaWsg==",
+  "success": true,
+  "projectFilePath": "/home/arturo/Documentos/ITQ/5/automatas/LYA1_Lexico/LYA1_Lexico.csproj",
+  "expectedPackageFiles": [
+    "/home/arturo/.nuget/packages/microsoft.aspnetcore.app.ref/7.0.10/microsoft.aspnetcore.app.ref.7.0.10.nupkg.sha512"
+  ],
+  "logs": []
+}
