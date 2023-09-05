@@ -16,15 +16,12 @@ namespace LYA1_Lexico
                     L.setContenido("");
                     L.setClasificacion(Token.Tipos.Identificador);
                     
-                    L.nextToken();
-                    L.nextToken();
-                    L.nextToken();
-                    L.nextToken();
-                    L.nextToken();
-                    L.nextToken();
-                    L.nextToken();
-                    L.nextToken();
-                    L.nextToken();
+
+                    while(!L.FinArchivo())
+                    {
+                        L.nextToken();
+                    }
+
 
                     Console.WriteLine(L.getContenido());
                     Console.WriteLine(L.getClasificacion());

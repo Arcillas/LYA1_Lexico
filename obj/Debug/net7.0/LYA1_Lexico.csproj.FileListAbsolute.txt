@@ -1,0 +1,15 @@
+/home/arturo/Documentos/ITQ/5/automatas/LYA1_Lexico/obj/Debug/net7.0/LYA1_Lexico.csproj.AssemblyReference.cache
+/home/arturo/Documentos/ITQ/5/automatas/LYA1_Lexico/obj/Debug/net7.0/LYA1_Lexico.GeneratedMSBuildEditorConfig.editorconfig
+/home/arturo/Documentos/ITQ/5/automatas/LYA1_Lexico/obj/Debug/net7.0/LYA1_Lexico.AssemblyInfoInputs.cache
+/home/arturo/Documentos/ITQ/5/automatas/LYA1_Lexico/obj/Debug/net7.0/LYA1_Lexico.AssemblyInfo.cs
+/home/arturo/Documentos/ITQ/5/automatas/LYA1_Lexico/obj/Debug/net7.0/LYA1_Lexico.csproj.CoreCompileInputs.cache
+/home/arturo/Documentos/ITQ/5/automatas/LYA1_Lexico/bin/Debug/net7.0/LYA1_Lexico
+/home/arturo/Documentos/ITQ/5/automatas/LYA1_Lexico/bin/Debug/net7.0/LYA1_Lexico.deps.json
+/home/arturo/Documentos/ITQ/5/automatas/LYA1_Lexico/bin/Debug/net7.0/LYA1_Lexico.runtimeconfig.json
+/home/arturo/Documentos/ITQ/5/automatas/LYA1_Lexico/bin/Debug/net7.0/LYA1_Lexico.dll
+/home/arturo/Documentos/ITQ/5/automatas/LYA1_Lexico/bin/Debug/net7.0/LYA1_Lexico.pdb
+/home/arturo/Documentos/ITQ/5/automatas/LYA1_Lexico/obj/Debug/net7.0/LYA1_Lexico.dll
+/home/arturo/Documentos/ITQ/5/automatas/LYA1_Lexico/obj/Debug/net7.0/refint/LYA1_Lexico.dll
+/home/arturo/Documentos/ITQ/5/automatas/LYA1_Lexico/obj/Debug/net7.0/LYA1_Lexico.pdb
+/home/arturo/Documentos/ITQ/5/automatas/LYA1_Lexico/obj/Debug/net7.0/LYA1_Lexico.genruntimeconfig.cache
+/home/arturo/Documentos/ITQ/5/automatas/LYA1_Lexico/obj/Debug/net7.0/ref/LYA1_Lexico.dll
