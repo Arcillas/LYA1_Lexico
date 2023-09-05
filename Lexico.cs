@@ -45,16 +45,107 @@ namespace LYA1_Lexico
             }
             else if (c == '='){
                 setClasificacion(Tipos.Asignacion);
+                if ((c = (char)archivo.Peek()) == '='){
+                    setClasificacion(Tipos.OperadorRelacional);
+                    buffer += c;
+                    archivo.Read();
+                }
 
             }
+            else if(c == '+'){
+                setClasificacion(Tipos.OperadorTermino);
+
+                if((c = (char)archivo.Peek()) == '+'){
+                    setClasificacion(Tipos.IncrementoTermino);
+                    buffer += c;
+                    archivo.Read();
+                }
+                if((c = (char)archivo.Peek()) == '='){
+                    setClasificacion(Tipos.IncrementoTermino);
+                    buffer += c;
+                    archivo.Read();
+                }
+                
+            }
+            else if(c == '-'){
+                setClasificacion(Tipos.OperadorTermino);
+
+                if((c = (char)archivo.Peek()) == '-' ){
+                    setClasificacion(Tipos.IncrementoTermino);
+                    buffer += c;
+                    archivo.Read();
+                }
+                if((c = (char)archivo.Peek()) == '='){
+                    setClasificacion(Tipos.IncrementoTermino);
+                    buffer += c;
+                    archivo.Read();
+                }
+                
+            }
+
+            else if (c == '*' || c == '/' || c == '%'){
+                setClasificacion(Tipos.OperadorFactor);
+                if((c = (char)archivo.Peek()) == '='){
+                    setClasificacion(Tipos.OperadorFactor);
+                    buffer += c;
+                    archivo.Read();
+                }
+            }
+
             else if (c == ';'){
                 setClasificacion(Tipos.FinSentencia);
             }
+            else if (c == '{'){
+                setClasificacion(Tipos.Inicio);
+            }
+            else if (c == '}'){
+                setClasificacion(Tipos.Fin);
+            }
+
+            else if (c == '!'){
+                setClasificacion(Tipos.OperadorLogico);
+            }
+
+            else if (c == '&'){
+                if((c = (char)archivo.Peek()) == '&'){
+                    setClasificacion(Tipos.OperadorLogico);
+                    buffer += c;
+                    archivo.Read();
+                }
+                else{
+                    setClasificacion(Tipos.Caracter);
+                }
+            }
+
+            else if (c == '|'){
+                if((c = (char)archivo.Peek()) == '|'){
+                    setClasificacion(Tipos.OperadorLogico);
+                    buffer += c;
+                    archivo.Read();
+                }
+                else{
+                    setClasificacion(Tipos.Caracter);
+                }
+            }
+
+            else if (c == '<' || c == '>' || c == '!'){
+                setClasificacion(Tipos.OperadorRelacional);
+                if((c = (char)archivo.Peek()) == '='){
+                    setClasificacion(Tipos.OperadorRelacional);
+                    buffer += c;
+                    archivo.Read();
+                }
+            }
+
             else{
                 setClasificacion(Tipos.Caracter);
             }
             setContenido(buffer);
-            Log.WriteLine(getContenido() + " : " + getClasificacion());
+            Log.WriteLine("["+ getContenido() + "] : " + getClasificacion());
+        }
+
+        public bool FinArchivo(){
+            return archivo.EndOfStream;
         }
 
     }
