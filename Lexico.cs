@@ -104,6 +104,11 @@ namespace LYA1_Lexico
 
             else if (c == '!'){
                 setClasificacion(Tipos.OperadorLogico);
+                if((c = (char)archivo.Peek()) == '='){
+                    setClasificacion(Tipos.OperadorRelacional);
+                    buffer += c;
+                    archivo.Read();
+                }
             }
 
             else if (c == '&'){
@@ -128,7 +133,7 @@ namespace LYA1_Lexico
                 }
             }
 
-            else if (c == '<' || c == '>' || c == '!'){
+            else if (c == '<' || c == '>'){
                 setClasificacion(Tipos.OperadorRelacional);
                 if((c = (char)archivo.Peek()) == '='){
                     setClasificacion(Tipos.OperadorRelacional);
