@@ -55,12 +55,7 @@ namespace LYA1_Lexico
             else if(c == '+'){
                 setClasificacion(Tipos.OperadorTermino);
 
-                if((c = (char)archivo.Peek()) == '+'){
-                    setClasificacion(Tipos.IncrementoTermino);
-                    buffer += c;
-                    archivo.Read();
-                }
-                if((c = (char)archivo.Peek()) == '='){
+                if((c = (char)archivo.Peek()) == '+' || c == '='){
                     setClasificacion(Tipos.IncrementoTermino);
                     buffer += c;
                     archivo.Read();
