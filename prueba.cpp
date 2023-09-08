@@ -8,6 +8,7 @@
         radioDeLaCircunferencia=45; 
         }
 
+        >,>= <,<=, !, !=
 
         -+
         +-

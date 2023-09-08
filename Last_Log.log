@@ -32,6 +32,16 @@
 [45] : Numero
 [;] : FinSentencia
 [}] : Fin
+[>] : OperadorRelacional
+[,] : Caracter
+[>=] : OperadorRelacional
+[<] : OperadorRelacional
+[,] : Caracter
+[<=] : OperadorRelacional
+[,] : Caracter
+[!] : OperadorLogico
+[,] : Caracter
+[!=] : OperadorRelacional
 [-] : OperadorTermino
 [+] : OperadorTermino
 [+] : OperadorTermino

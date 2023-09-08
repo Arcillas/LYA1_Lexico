@@ -21,130 +21,153 @@ namespace LYA1_Lexico
             Log.Close();
         }
 
-        public void nextToken(){
+        public void nextToken()
+        {
             char c;
             String buffer = "";
-            while(char.IsWhiteSpace(c = (char)archivo.Read())){
+            while (char.IsWhiteSpace(c = (char)archivo.Read()))
+            {
             }
-            
+
             buffer += c;
-            if (char.IsLetter(c)){
+            if (char.IsLetter(c))
+            {
                 setClasificacion(Tipos.Identificador);
-                while(char.IsLetterOrDigit(c = (char)archivo.Peek())){
+                while (char.IsLetterOrDigit(c = (char)archivo.Peek()))
+                {
                     buffer += c;
                     archivo.Read();
                 }
-                
+
             }
-            else if (char.IsDigit(c)){
+            else if (char.IsDigit(c))
+            {
                 setClasificacion(Tipos.Numero);
-                while(char.IsDigit(c = (char)archivo.Peek())){
+                while (char.IsDigit(c = (char)archivo.Peek()))
+                {
                     buffer += c;
                     archivo.Read();
                 }
             }
-            else if (c == '='){
+            else if (c == '=')
+            {
                 setClasificacion(Tipos.Asignacion);
-                if ((c = (char)archivo.Peek()) == '='){
+                if ((c = (char)archivo.Peek()) == '=')
+                {
                     setClasificacion(Tipos.OperadorRelacional);
                     buffer += c;
                     archivo.Read();
                 }
 
             }
-            else if(c == '+'){
+            else if (c == '+')
+            {
                 setClasificacion(Tipos.OperadorTermino);
 
-                if((c = (char)archivo.Peek()) == '+' || c == '='){
+                if ((c = (char)archivo.Peek()) == '+' || c == '=')
+                {
                     setClasificacion(Tipos.IncrementoTermino);
                     buffer += c;
                     archivo.Read();
                 }
-                
+
             }
-            else if(c == '-'){
+            else if (c == '-')
+            {
                 setClasificacion(Tipos.OperadorTermino);
 
-                if((c = (char)archivo.Peek()) == '-' ){
+                if ((c = (char)archivo.Peek()) == '-' || c == '=')
+                {
                     setClasificacion(Tipos.IncrementoTermino);
                     buffer += c;
                     archivo.Read();
                 }
-                if((c = (char)archivo.Peek()) == '='){
-                    setClasificacion(Tipos.IncrementoTermino);
-                    buffer += c;
-                    archivo.Read();
-                }
-                
+
             }
 
-            else if (c == '*' || c == '/' || c == '%'){
+            else if (c == '*' || c == '/' || c == '%')
+            {
                 setClasificacion(Tipos.OperadorFactor);
-                if((c = (char)archivo.Peek()) == '='){
+                if ((c = (char)archivo.Peek()) == '=')
+                {
                     setClasificacion(Tipos.OperadorFactor);
                     buffer += c;
                     archivo.Read();
                 }
             }
 
-            else if (c == ';'){
+            else if (c == ';')
+            {
                 setClasificacion(Tipos.FinSentencia);
             }
-            else if (c == '{'){
+            else if (c == '{')
+            {
                 setClasificacion(Tipos.Inicio);
             }
-            else if (c == '}'){
+            else if (c == '}')
+            {
                 setClasificacion(Tipos.Fin);
             }
 
-            else if (c == '!'){
+            else if (c == '!')
+            {
                 setClasificacion(Tipos.OperadorLogico);
-                if((c = (char)archivo.Peek()) == '='){
+                if ((c = (char)archivo.Peek()) == '=')
+                {
                     setClasificacion(Tipos.OperadorRelacional);
                     buffer += c;
                     archivo.Read();
                 }
             }
 
-            else if (c == '&'){
-                if((c = (char)archivo.Peek()) == '&'){
+            else if (c == '&')
+            {
+                if ((c = (char)archivo.Peek()) == '&')
+                {
                     setClasificacion(Tipos.OperadorLogico);
                     buffer += c;
                     archivo.Read();
                 }
-                else{
+                else
+                {
                     setClasificacion(Tipos.Caracter);
                 }
             }
 
-            else if (c == '|'){
-                if((c = (char)archivo.Peek()) == '|'){
+            else if (c == '|')
+            {
+                if ((c = (char)archivo.Peek()) == '|')
+                {
                     setClasificacion(Tipos.OperadorLogico);
                     buffer += c;
                     archivo.Read();
                 }
-                else{
+                else
+                {
                     setClasificacion(Tipos.Caracter);
                 }
             }
 
-            else if (c == '<' || c == '>'){
+            else if (c == '<' || c == '>')
+            {
                 setClasificacion(Tipos.OperadorRelacional);
-                if((c = (char)archivo.Peek()) == '='){
-                    setClasificacion(Tipos.OperadorRelacional);
+                if ((c = (char)archivo.Peek()) == '=')
+                {
                     buffer += c;
                     archivo.Read();
                 }
             }
 
-            else{
+            else
+            {
                 setClasificacion(Tipos.Caracter);
             }
             setContenido(buffer);
-            Log.WriteLine("["+ getContenido() + "] : " + getClasificacion());
+            Log.WriteLine("[" + getContenido() + "] : " + getClasificacion());
         }
 
-        public bool FinArchivo(){
+        public bool FinArchivo()
+        {
             return archivo.EndOfStream;
         }
 
