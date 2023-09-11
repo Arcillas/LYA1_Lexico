@@ -13,7 +13,7 @@ namespace LYA1_Lexico
         public Lexico()
         {
             archivo = new StreamReader("prueba.cpp");
-            Log = new StreamWriter("Last_Log.log");
+            Log = new StreamWriter("prueba.log");
         }
         public void Dispose()
         {
@@ -156,6 +156,15 @@ namespace LYA1_Lexico
                     buffer += c;
                     archivo.Read();
                 }
+            }
+            else if (c == '\"'){
+                setClasificacion(Tipos.Caracter);
+                while ((c = (char)archivo.Read()) != '\"')
+                {   
+                    buffer += c;
+                }
+                buffer += c;
+                archivo.Read();
             }
 
             else
